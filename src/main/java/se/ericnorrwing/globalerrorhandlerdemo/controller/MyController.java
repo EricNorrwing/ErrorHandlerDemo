@@ -12,9 +12,10 @@ public class MyController {
 
     //New Version
     @GetMapping("/derp")
-    public ResponseEntity<String> hello (@RequestParam int value) {
-        if (value == 1) throw new MyException("Look at me im an exception haha");
-        if (value == 2) throw new UserCouldntReadException("customer couldnt read");
+    public ResponseEntity<String> hello (@RequestParam int userInputPersonalNumber) {
+        if (userInputPersonalNumber == 1) throw new MyException("Look at me im an exception haha");
+        if (userInputPersonalNumber == 2) throw new UserCouldntReadException("customer couldnt read");
+
         return ResponseEntity.ok("You did it!");
     }
 
